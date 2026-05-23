@@ -1,0 +1,18 @@
+FROM node:20-alpine
+
+LABEL maintainer="practica7-cicd"
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm ci --omit=dev
+
+COPY src ./src
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
