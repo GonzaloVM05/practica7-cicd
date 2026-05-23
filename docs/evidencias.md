@@ -1,75 +1,75 @@
 # Evidencias de la practica
 
-Este documento indica las capturas recomendadas para justificar la practica de CI/CD.
+## 1. Repositorio GitHub
 
-## Repositorio GitHub
+![repo](image-2.png)
 
-Captura la pagina principal del repositorio mostrando el nombre `practica7-cicd`, los archivos principales y la carpeta `.github/workflows`.
+## 3. Ejecucion por push
 
-## Commits y ramas
+![push](image-4.png)
 
-Captura el historial de commits y, si se han usado ramas, la lista de branches o un pull request donde se vea el flujo de trabajo.
+## 4. Ejecucion manual
 
-## Ejecucion por push
+![manual](image-5.png)
 
-Captura una ejecucion del workflow iniciada automaticamente por un `push`. Debe verse el evento `push` en GitHub Actions.
+## 5. Ejecucion cron
 
-## Ejecucion manual
+![cron](image-6.png)
 
-Captura la ejecucion manual desde `workflow_dispatch`, incluyendo el parametro `environment` seleccionado.
+## 6. Webhook repository_dispatch
 
-## Ejecucion cron
+![webhook](image-7.png)
 
-Captura una ejecucion programada por `schedule` o la configuracion del cron en el workflow si aun no se ha ejecutado.
+## 7. Triggers del pipeline
 
-## Webhook repository_dispatch
+![triggers](image-8.png)
 
-Captura la peticion usada para lanzar `repository_dispatch` o la ejecucion del workflow donde aparezca ese evento. El tipo configurado es `deploy-webhook`.
+## 8. Jobs encadenados
 
-## Jobs encadenados
+![workflow](image-3.png)
 
-Captura el grafo del workflow mostrando los jobs encadenados con `needs`: `lint`, `test`, `security_scan`, `build_and_push_docker`, `deploy`, `post_deploy_tests` y `notify`.
+## 9. Lint
 
-## Lint
+![lint](image-9.png)
 
-Captura el job `lint` completado correctamente y el log donde aparezca `npm run lint`.
+## 10. Tests y cobertura
 
-## Tests y cobertura
+![coverage](image-10.png)
 
-Captura el job `test` completado correctamente, el log de `npm run test:coverage` y el artefacto de cobertura generado.
+## 11. Security scan
 
-## Build Docker
+![trivy](image-11.png)
 
-Captura el job `build_and_push_docker` mostrando la construccion de la imagen Alpine y la imagen Debian.
+## 12. Build Docker
 
-## Push Docker Hub
+![alpine](image-12.png)
+![debian](image-13.png)
 
-Captura los pasos `docker push` del workflow y la pagina de Docker Hub donde se vean las etiquetas `alpine` y `debian`.
+## 13. Push Docker Hub
 
-## Despliegue por SSH
+![subiralpine](image-14.png)
+![subirdebian](image-15.png)
 
-Captura el job `deploy` mostrando la conexion SSH y los comandos de despliegue: `docker pull`, parada del contenedor anterior y arranque del contenedor nuevo.
+## 14. Despliegue por SSH
 
-## Prueba post-despliegue
+![pullpush](image-16.png)
 
-Captura el job `post_deploy_tests` con el `curl http://SERVER_HOST:3000/health` ejecutado correctamente.
+## 15. Prueba post-despliegue
 
-## Notificacion email
+![test](image-17.png)
 
-Captura el job `notify` y el email recibido indicando el resultado del pipeline.
+## 16. Notificacion email
 
-## Servidor funcionando
+![email](image.png)
 
-Captura el navegador o terminal accediendo a:
+## 17. Servidor funcionando
 
-```text
-http://SERVER_HOST:3000/health
-```
+![servidor funcionando](image-1.png)
 
-La respuesta esperada es:
+## 18. Docker en el VPS
 
-```json
-{
-  "status": "ok"
-}
-```
+![dockerps](image-18.png)
+
+## 19. Secrets configurados
+
+![secrets](image-19.png)
