@@ -4,6 +4,12 @@
 
 ![repo](image-2.png)
 
+## 2. Workflow, commits y ramas
+
+![workflowcomm](image-20.png)
+![commits](image-21.png)
+![ramas](image-22.png)
+
 ## 3. Ejecucion por push
 
 ![push](image-4.png)
