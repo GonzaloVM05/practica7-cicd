@@ -63,6 +63,7 @@ app.get("/", (req, res) => {
     <main>
       <h1>practica7-cicd</h1>
       <p>API REST desplegada automaticamente con GitHub Actions, Docker Hub y un VPS.</p>
+      <p>Prueba haciendo un cambio<p>
       <span class="status">Servidor funcionando</span>
       <h2>Endpoints disponibles</h2>
       <ul>
