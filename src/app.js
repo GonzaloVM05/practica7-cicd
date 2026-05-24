@@ -13,6 +13,69 @@ let tasks = [
 ];
 let nextId = 2;
 
+app.get("/", (req, res) => {
+  res.type("html").send(`<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>practica7-cicd</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #172033;
+      }
+
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 48px 20px;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+      }
+
+      .status {
+        display: inline-block;
+        margin: 16px 0 24px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: #dff7e8;
+        color: #12662f;
+        font-weight: 700;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      code {
+        background: #e9eef7;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>practica7-cicd</h1>
+      <p>API REST desplegada automaticamente con GitHub Actions, Docker Hub y un VPS.</p>
+      <span class="status">Servidor funcionando</span>
+      <h2>Endpoints disponibles</h2>
+      <ul>
+        <li><code>GET /health</code> comprueba el estado del servicio.</li>
+        <li><code>GET /tasks</code> devuelve la lista de tareas.</li>
+        <li><code>POST /tasks</code> crea una tarea con <code>title</code>.</li>
+        <li><code>PATCH /tasks/:id</code> marca una tarea como completada.</li>
+      </ul>
+    </main>
+  </body>
+</html>`);
+});
+
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
